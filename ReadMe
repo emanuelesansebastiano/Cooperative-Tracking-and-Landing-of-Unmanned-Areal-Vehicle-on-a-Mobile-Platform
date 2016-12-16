@@ -1,6 +1,8 @@
 Steps to run 'move_coop_pkg' package
 This package make a Parrot and a Turtlebot a really simple taking off and landing cooperative task.
-Watch demo1.mp4 and demo2.mp4 to see the protocol.
+Watch demos at the following links to see the protocol working.
+ - https://youtu.be/7lvlAJ4FWSA
+ - https://youtu.be/5W9rNap42i4
 
 To run the protocol:
 .ROS indigo, or new versions, must be installed on all the computers
