@@ -1,0 +1,52 @@
+Steps to run 'move_coop_pkg' package
+This package make a Parrot and a Turtlebot a really simple taking off and landing cooperative task.
+Watch demo1.mp4 and demo2.mp4 to see the protocol.
+
+To run the protocol:
+.ROS indigo, or new versions, must be installed on all the computers
+.Package 'turtlebot' installed using 'catkin_make' in the catkin workspace of Turtlebot's computer
+.Package 'move_coop_pkg' installed using 'catkin_make' in the catkin workspace of your computer
+
+Turn on devices:
+.Turn on the Parrot;
+.Turn on the Turtlebot and the computer related to it.
+
+Link devices:
+.link your computer to the Parrot's wifi;
+.link Turtlebot's computer to the Parrot's wifi.
+
+Change the .bashrc file of both computers,
+add the following lines to establish who is the master:
+[Using static IP is suggested to speed up the connection when you start]
+
+"
+# Network creation with your pc (<your IP>) and the other pc (<other IP>)
+export ROS_IP= <your IP>
+export ROS_HOSTNAME= <your IP>
+export ROS_MASTER_URI=http://<other IP>:11311
+
+echo *ROS_HOSTNAME: *$ROS_HOSTNAME
+echo *ROS_IP: *$ROS_IP
+echo *ROS_MASTER_URI *$ROS_MASTER_URI
+"
+
+For the computer you want to be the master of itself use the same IP in every place.
+
+Right now everything is ready to start.
+
+Run on Turtlebot's computer in two different terminals:
+.roscore
+.roslaunch turtlebot_bringup minimal.launch
+
+Run on your computer different terminals:
+.roslaunch move_coop_pkg ardrone_hover_over_rondel.launch
+.rosrun move_coop_pkg turtlebot_controller.py
+.rosrun move_coop_pkg parrot_controller.py
+.rosrun move_coop_pkg key_commander.py
+
+.call the service 'Trim' to stabilize the Parrot
+
+In the key_commander window there are all the instruction to start the protocol.
+
+ENJOY!!!!!!
+
