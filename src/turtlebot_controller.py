@@ -70,7 +70,7 @@ def odom_listener(msg_pose):
 # end function to subscribe callbacks definition
 
 def go_home1(speed, turn, time_step):
-	# open cycle controll (odometry based)
+	# open loop control (odometry based)
 	global x_od, y_od, th_od
 	global speed_max, turn_max
 	exit = 0
@@ -139,7 +139,7 @@ def go_home1(speed, turn, time_step):
 # end function go_home1
 
 def go_home2(speed, turn, time_step):
-	# open cycle controll (odometry based)
+	# open loop control (odometry based)
 	global x_od, y_od, th_od
 	global speed_max, turn_max
 	exit = 0

@@ -320,7 +320,7 @@ while sequence_val < 3 and not rospy.is_shutdown():
 		sequence_val = 4
 		rospy.sleep(time_step)
 
-	# no istruction
+	# no instruction
 	else:
 		pid = 0
 		counter = counter +1
