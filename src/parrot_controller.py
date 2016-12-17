@@ -52,6 +52,8 @@ def callback_land(data):
 #		if(data.tags_distance[0] < 60):
 #			pub_land = rospy.Publisher("ardrone/land", Empty, queue_size=10)
 #			pub_land.publish(Empty())
+
+# Uncomment to make it land rapidly
 		pub_land = rospy.Publisher("ardrone/land", Empty, queue_size=10)
 		rospy.sleep(2)
 		pub_land.publish(Empty())
@@ -132,8 +134,11 @@ print 'Drone process fired!'
 
 sequence_val = 0
 counter = 0
-time_wait = 15 #15
-time_wait2 = 38 #50
+
+#first counter limit
+time_wait = 15 
+#second counter limit
+time_wait2 = 50
 counter_limit = time_wait/time_step
 temp_pid = 0
 
@@ -189,7 +194,7 @@ while sequence_val < 3 and not rospy.is_shutdown():
 
 			#tag detection
 			# if to exit the process after some attempts
-			if tag_find_counter > 10: #7:
+			if tag_find_counter > 10:
 				pub_land = rospy.Publisher("ardrone/land", Empty, queue_size=10)
 				print 'the drone cannot meet the tag - system down'
 				print 'turtlebot is sent home and the drone lands'
