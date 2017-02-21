@@ -4,7 +4,7 @@ from catkin_pkg.python_setup import generate_distutils_setup
  
 # fetch values from package.xml 
 setup_args = generate_distutils_setup( 
-	packages=['two_soccer_player'], 
-	package_dir={'': 'include/two_soccer_player'}, 
+	packages=['move_coop_pkg'], 
+	package_dir={'': 'include/move_coop_pkg'}, 
 ) 
 setup(**setup_args)
